@@ -24,6 +24,7 @@ export default function Contact({ prefilledService }) {
 
   const [errors, setErrors] = useState({});
   const [submissionStatus, setSubmissionStatus] = useState(null);
+  const [sendError, setSendError] = useState('');
   const [copiedNotification, setCopiedNotification] = useState(false);
 
   useEffect(() => {
@@ -50,20 +51,40 @@ export default function Contact({ prefilledService }) {
     return errs;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (submissionStatus === 'sending') return;
     const errs = validate();
     setErrors(errs);
-
-    if (Object.keys(errs).length === 0) {
-      const subject = encodeURIComponent(`Project Inquiry: ${formData.projectType} from ${formData.name}`);
-      const body = encodeURIComponent(
-        `Hi Aravindh,\n\nMy name is ${formData.name} (${formData.email}).\n\nProject Type: ${formData.projectType}\n\nProject Details:\n${formData.details}\n\nLooking forward to hearing from you!`
-      );
-      
-      const mailtoUrl = `mailto:${personalInfo.contact.email}?subject=${subject}&body=${body}`;
-      window.open(mailtoUrl, '_blank');
+    setSendError('');
+    if (Object.keys(errs).length) return;
+    setSubmissionStatus('sending');
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 20000);
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/' + personalInfo.contact.email, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        signal: controller.signal,
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          project: formData.projectType,
+          message: formData.details.trim(),
+          _subject: 'Portfolio inquiry: ' + formData.projectType,
+          _template: 'table',
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || (result.success !== true && result.success !== 'true')) {
+        throw new Error('Submission rejected');
+      }
       setSubmissionStatus('submitted');
+    } catch {
+      setSubmissionStatus('error');
+      setSendError('Your message could not be submitted. Please try again, or contact me using WhatsApp or email. Your details are still here.');
+    } finally {
+      window.clearTimeout(timeout);
     }
   };
 
@@ -194,11 +215,11 @@ export default function Contact({ prefilledService }) {
             <div className="rounded-2xl bg-white border border-slate-200 p-6 sm:p-8 shadow-sm relative">
               <h3 className="text-xl font-bold text-slate-950 mb-2">Send a Message</h3>
               <p className="text-sm text-slate-600 mb-6">
-                Fill in the details below. This will prepare your message and launch your default email client with all information pre-filled.
+                Fill in the details below to send your project inquiry directly. No email app is needed.
               </p>
 
               {/* Form Element */}
-              <form onSubmit={handleSubmit} noValidate className="space-y-4">
+              <form onSubmit={handleSubmit} aria-busy={submissionStatus === 'sending'} noValidate className="space-y-4">
                 
                 {/* Full Name */}
                 <div>
@@ -307,10 +328,11 @@ export default function Contact({ prefilledService }) {
                 <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                   <button
                     type="submit"
+                    disabled={submissionStatus === 'sending'}
                     className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-950 hover:bg-[rgb(var(--accent))] text-white font-bold text-sm shadow-md shadow-slate-950/20 transition-colors duration-200 cursor-pointer"
                   >
                     <Send className="w-4 h-4 text-amber-400" />
-                    <span>Send Message via Email</span>
+                    <span>{submissionStatus === 'sending' ? 'Sending?' : 'Send Message'}</span>
                   </button>
 
                   <button
@@ -327,17 +349,18 @@ export default function Contact({ prefilledService }) {
 
               {/* Verified Clear Message Feedback */}
               {submissionStatus === 'submitted' && (
-                <div className="mt-6 p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs sm:text-sm space-y-1">
+                <div role="status" className="mt-6 p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs sm:text-sm space-y-1">
                   <div className="flex items-center gap-2 font-bold text-emerald-700">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                    <span>Email Client Triggered</span>
+                    <span>Message Submitted</span>
                   </div>
                   <p>
-                    Your default email application was opened with this message addressed to{' '}
-                    <strong className="text-slate-900">{personalInfo.contact.email}</strong>. If your email client didn't launch automatically, simply send directly or use the "Copy Summary" button above.
+                    Your inquiry has been submitted. Thank you for getting in touch!
                   </p>
                 </div>
               )}
+
+              {sendError && <p role="alert" className="mt-4 text-sm text-rose-700">{sendError}</p>}
 
               {copiedNotification && (
                 <div className="mt-3 p-3 rounded-lg bg-indigo-50 border border-indigo-200 text-indigo-900 text-xs font-semibold flex items-center gap-2">
