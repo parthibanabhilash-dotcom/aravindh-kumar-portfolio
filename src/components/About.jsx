@@ -25,7 +25,7 @@ export default function About() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight">
             A Little About Me
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#6366f1] via-[#10b981] to-[#f59e0b] mx-auto rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[rgb(var(--accent))] via-[rgb(var(--accent-tertiary))] to-[rgb(var(--accent-secondary))] mx-auto rounded-full"></div>
         </div>
 
         {/* Narrative Box */}
@@ -38,16 +38,16 @@ export default function About() {
           </p>
           
           <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-sm font-semibold">
-            <div className="flex items-center gap-2 text-[#6366f1]">
-              <ShieldCheck className="w-5 h-5 text-[#6366f1]" />
+            <div className="flex items-center gap-2 text-[rgb(var(--accent))]">
+              <ShieldCheck className="w-5 h-5 text-[rgb(var(--accent))]" />
               <span>Honest & Authentic Approach</span>
             </div>
-            <div className="flex items-center gap-2 text-[#f59e0b]">
-              <HeartHandshake className="w-5 h-5 text-[#f59e0b]" />
+            <div className="flex items-center gap-2 text-[rgb(var(--accent-secondary))]">
+              <HeartHandshake className="w-5 h-5 text-[rgb(var(--accent-secondary))]" />
               <span>Collaborative Client Mindset</span>
             </div>
             <div className="flex items-center gap-2 text-slate-900">
-              <Sparkles className="w-5 h-5 text-[#10b981]" />
+              <Sparkles className="w-5 h-5 text-[rgb(var(--accent-tertiary))]" />
               <span>Continuous Tool Adoption</span>
             </div>
           </div>
@@ -60,9 +60,9 @@ export default function About() {
             <a
               href="/Aravindh_Kumar_Resume.pdf"
               download="Aravindh_Kumar_Resume.pdf"
-              className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-950 text-white hover:bg-[#6366f1] text-xs font-bold transition-all shadow-sm group"
+              className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-950 text-white hover:bg-[rgb(var(--accent))] text-xs font-bold transition-all shadow-sm group"
             >
-              <FileDown className="w-4 h-4 text-[#f59e0b] group-hover:text-white transition-colors" />
+              <FileDown className="w-4 h-4 text-[rgb(var(--accent-secondary))] group-hover:text-white transition-colors" />
               <span>Download Resume (PDF)</span>
             </a>
           </div>
@@ -83,15 +83,15 @@ export default function About() {
                   <div
                     className={`w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-200 mb-6 ${
                       isAmber
-                        ? 'bg-amber-50 text-[#f59e0b] border border-amber-200 group-hover:bg-[#f59e0b] group-hover:text-white'
-                        : 'bg-indigo-50 text-[#6366f1] border border-indigo-200 group-hover:bg-[#6366f1] group-hover:text-white'
+                        ? 'bg-amber-50 text-[rgb(var(--accent-secondary))] border border-amber-200 group-hover:bg-[rgb(var(--accent-secondary))] group-hover:text-white'
+                        : 'bg-indigo-50 text-[rgb(var(--accent))] border border-indigo-200 group-hover:bg-[rgb(var(--accent))] group-hover:text-white'
                     }`}
                   >
                     <IconComponent className="w-7 h-7" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-slate-950 mb-3 group-hover:text-[#6366f1] transition-colors">
+                  <h3 className="text-xl font-bold text-slate-950 mb-3 group-hover:text-[rgb(var(--accent))] transition-colors">
                     {highlight.title}
                   </h3>
 

@@ -91,3 +91,6 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Keep headings below the fixed navigation. */
+section[id] { scroll-margin-top: 9rem; }

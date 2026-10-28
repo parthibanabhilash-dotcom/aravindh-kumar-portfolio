@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 text-white border-t border-slate-900 pt-16 pb-12 relative overflow-hidden">
       {/* Background ambient accent */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-[#6366f1]/10 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-[rgb(var(--accent))]/10 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-900">
@@ -23,8 +23,8 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#6366f1] via-[#10b981] to-[#f59e0b] p-[2px] shadow-md">
-                <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-[#6366f1] via-[#10b981] to-[#f59e0b] text-base">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[rgb(var(--accent))] via-[rgb(var(--accent-tertiary))] to-[rgb(var(--accent-secondary))] p-[2px] shadow-md">
+                <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-[rgb(var(--accent))] via-[rgb(var(--accent-tertiary))] to-[rgb(var(--accent-secondary))] text-base">
                   AK
                 </div>
               </div>
@@ -54,17 +54,17 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-slate-400 font-medium">
               <li>
-                <a href="#about" className="hover:text-[#6366f1] transition-colors">
+                <a href="#about" className="hover:text-[rgb(var(--accent))] transition-colors">
                   About Me
                 </a>
               </li>
               <li>
-                <a href="#skills" className="hover:text-[#10b981] transition-colors">
+                <a href="#skills" className="hover:text-[rgb(var(--accent-tertiary))] transition-colors">
                   Skills & Tools
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-[#f59e0b] transition-colors">
+                <a href="#projects" className="hover:text-[rgb(var(--accent-secondary))] transition-colors">
                   Selected Projects
                 </a>
               </li>
@@ -79,7 +79,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#process" className="hover:text-[#6366f1] transition-colors">
+                <a href="#process" className="hover:text-[rgb(var(--accent))] transition-colors">
                   Working Process
                 </a>
               </li>
@@ -94,16 +94,16 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-slate-400 font-medium">
               <a
                 href={`mailto:${personalInfo.contact.email}`}
-                className="flex items-center gap-2 hover:text-[#6366f1] transition-colors"
+                className="flex items-center gap-2 hover:text-[rgb(var(--accent))] transition-colors"
               >
-                <Mail className="w-4 h-4 text-[#6366f1] shrink-0" />
+                <Mail className="w-4 h-4 text-[rgb(var(--accent))] shrink-0" />
                 <span>{personalInfo.contact.email}</span>
               </a>
               <a
                 href={`tel:${personalInfo.contact.phone.replace(/\s+/g, '')}`}
-                className="flex items-center gap-2 hover:text-[#10b981] transition-colors"
+                className="flex items-center gap-2 hover:text-[rgb(var(--accent-tertiary))] transition-colors"
               >
-                <Phone className="w-4 h-4 text-[#10b981] shrink-0" />
+                <Phone className="w-4 h-4 text-[rgb(var(--accent-tertiary))] shrink-0" />
                 <span>{personalInfo.contact.phone}</span>
               </a>
             </div>

@@ -11,10 +11,10 @@ export default function Process() {
   };
 
   const stepStyles = [
-    { badge: 'bg-[#6366f1] text-white', icon: 'text-[#6366f1] bg-indigo-50 border-indigo-200' },
-    { badge: 'bg-[#10b981] text-white', icon: 'text-[#10b981] bg-emerald-50 border-emerald-200' },
+    { badge: 'bg-[rgb(var(--accent))] text-white', icon: 'text-[rgb(var(--accent))] bg-indigo-50 border-indigo-200' },
+    { badge: 'bg-[rgb(var(--accent-tertiary))] text-white', icon: 'text-[rgb(var(--accent-tertiary))] bg-emerald-50 border-emerald-200' },
     { badge: 'bg-[#a855f7] text-white', icon: 'text-[#a855f7] bg-purple-50 border-purple-200' },
-    { badge: 'bg-[#f59e0b] text-white', icon: 'text-[#f59e0b] bg-amber-50 border-amber-200' },
+    { badge: 'bg-[rgb(var(--accent-secondary))] text-white', icon: 'text-[rgb(var(--accent-secondary))] bg-amber-50 border-amber-200' },
   ];
 
   return (
@@ -35,14 +35,14 @@ export default function Process() {
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
             A structured, collaborative approach from initial consultation to production launch.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#6366f1] via-[#10b981] to-[#f59e0b] mx-auto rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[rgb(var(--accent))] via-[rgb(var(--accent-tertiary))] to-[rgb(var(--accent-secondary))] mx-auto rounded-full"></div>
         </div>
 
         {/* Desktop Horizontal Timeline / Mobile Vertical Timeline */}
         <div className="relative">
           
           {/* Desktop Connection Beam line across steps */}
-          <div className="hidden lg:block absolute top-[44px] left-[10%] right-[10%] h-[3px] bg-gradient-to-r from-[#6366f1] via-[#10b981] to-[#f59e0b] z-0 opacity-40 rounded-full"></div>
+          <div className="hidden lg:block absolute top-[44px] left-[10%] right-[10%] h-[3px] bg-gradient-to-r from-[rgb(var(--accent))] via-[rgb(var(--accent-tertiary))] to-[rgb(var(--accent-secondary))] z-0 opacity-40 rounded-full"></div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {workingProcess.map((step, index) => {
@@ -69,7 +69,7 @@ export default function Process() {
                     <span className="text-xs font-mono uppercase tracking-wider text-slate-500 font-bold">
                       Phase {index + 1}
                     </span>
-                    <h3 className="text-xl font-extrabold text-slate-950 mt-1 mb-1 group-hover:text-[#6366f1] transition-colors">
+                    <h3 className="text-xl font-extrabold text-slate-950 mt-1 mb-1 group-hover:text-[rgb(var(--accent))] transition-colors">
                       {step.title}
                     </h3>
                     <div className="text-xs text-slate-500 font-semibold mb-3">

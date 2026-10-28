@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Sparkles } from 'lucide-react';
+import React from 'react';
+
 
 export default function PalettePill({ activeAccent, onSelectAccent }) {
   const colors = [
@@ -11,7 +11,7 @@ export default function PalettePill({ activeAccent, onSelectAccent }) {
   ];
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 hidden sm:flex items-center gap-2">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2">
       <div className="bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xl shadow-slate-900/10 px-3.5 py-2 rounded-full flex items-center gap-2.5 transition-transform hover:scale-105">
         <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-wider pr-1">
           Palette:
@@ -22,6 +22,9 @@ export default function PalettePill({ activeAccent, onSelectAccent }) {
             return (
               <button
                 key={c.id}
+                type="button"
+                aria-label={`Use ${c.name} palette`}
+                aria-pressed={isActive}
                 onClick={() => onSelectAccent && onSelectAccent(c.id)}
                 title={`${c.name} (${c.hex})`}
                 className={`relative w-5 h-5 rounded-full transition-all duration-200 transform hover:scale-125 cursor-pointer ${

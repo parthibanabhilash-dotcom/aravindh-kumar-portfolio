@@ -25,10 +25,10 @@ export default function Services({ onSelectService }) {
 
   // Color assignments matching user palette
   const serviceColors = [
-    { bg: 'bg-indigo-50', text: 'text-[#6366f1]', border: 'border-indigo-200', hoverBg: 'group-hover:bg-[#6366f1]', hoverText: 'group-hover:text-white', link: 'text-[#6366f1]' },
-    { bg: 'bg-amber-50', text: 'text-[#f59e0b]', border: 'border-amber-200', hoverBg: 'group-hover:bg-[#f59e0b]', hoverText: 'group-hover:text-white', link: 'text-[#f59e0b]' },
-    { bg: 'bg-emerald-50', text: 'text-[#10b981]', border: 'border-emerald-200', hoverBg: 'group-hover:bg-[#10b981]', hoverText: 'group-hover:text-white', link: 'text-[#10b981]' },
-    { bg: 'bg-indigo-50', text: 'text-[#6366f1]', border: 'border-indigo-200', hoverBg: 'group-hover:bg-[#6366f1]', hoverText: 'group-hover:text-white', link: 'text-[#6366f1]' },
+    { bg: 'bg-indigo-50', text: 'text-[rgb(var(--accent))]', border: 'border-indigo-200', hoverBg: 'group-hover:bg-[rgb(var(--accent))]', hoverText: 'group-hover:text-white', link: 'text-[rgb(var(--accent))]' },
+    { bg: 'bg-amber-50', text: 'text-[rgb(var(--accent-secondary))]', border: 'border-amber-200', hoverBg: 'group-hover:bg-[rgb(var(--accent-secondary))]', hoverText: 'group-hover:text-white', link: 'text-[rgb(var(--accent-secondary))]' },
+    { bg: 'bg-emerald-50', text: 'text-[rgb(var(--accent-tertiary))]', border: 'border-emerald-200', hoverBg: 'group-hover:bg-[rgb(var(--accent-tertiary))]', hoverText: 'group-hover:text-white', link: 'text-[rgb(var(--accent-tertiary))]' },
+    { bg: 'bg-indigo-50', text: 'text-[rgb(var(--accent))]', border: 'border-indigo-200', hoverBg: 'group-hover:bg-[rgb(var(--accent))]', hoverText: 'group-hover:text-white', link: 'text-[rgb(var(--accent))]' },
     { bg: 'bg-purple-50', text: 'text-[#a855f7]', border: 'border-purple-200', hoverBg: 'group-hover:bg-[#a855f7]', hoverText: 'group-hover:text-white', link: 'text-[#a855f7]' },
     { bg: 'bg-rose-50', text: 'text-[#f43f5e]', border: 'border-rose-200', hoverBg: 'group-hover:bg-[#f43f5e]', hoverText: 'group-hover:text-white', link: 'text-[#f43f5e]' },
     { bg: 'bg-amber-50', text: 'text-[#ea580c]', border: 'border-amber-200', hoverBg: 'group-hover:bg-[#ea580c]', hoverText: 'group-hover:text-white', link: 'text-[#ea580c]' },
@@ -53,7 +53,7 @@ export default function Services({ onSelectService }) {
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
             Combining web engineering, WordPress capabilities, and visual media to bring client concepts to life.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#6366f1] via-[#10b981] to-[#f59e0b] mx-auto rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[rgb(var(--accent))] via-[rgb(var(--accent-tertiary))] to-[rgb(var(--accent-secondary))] mx-auto rounded-full"></div>
         </div>
 
         {/* 7 Services Grid */}
@@ -75,7 +75,7 @@ export default function Services({ onSelectService }) {
                   </div>
 
                   {/* Service Title */}
-                  <h3 className="text-xl font-bold text-slate-950 mb-2.5 group-hover:text-[#6366f1] transition-colors">
+                  <h3 className="text-xl font-bold text-slate-950 mb-2.5 group-hover:text-[rgb(var(--accent))] transition-colors">
                     {service.title}
                   </h3>
 

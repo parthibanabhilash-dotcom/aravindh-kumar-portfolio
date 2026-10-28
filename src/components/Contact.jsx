@@ -95,7 +95,7 @@ export default function Contact({ prefilledService }) {
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Let's turn your idea into something valuable. Whether you need a website, WordPress solution, graphic design, or video editing, I'd love to hear about your project.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#6366f1] via-[#10b981] to-[#f59e0b] mx-auto rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[rgb(var(--accent))] via-[rgb(var(--accent-tertiary))] to-[rgb(var(--accent-secondary))] mx-auto rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
@@ -118,15 +118,15 @@ export default function Contact({ prefilledService }) {
                   href={`mailto:${personalInfo.contact.email}`}
                   className="group flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-400 hover:bg-indigo-50/40 transition-all"
                 >
-                  <div className="w-11 h-11 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center text-[#6366f1] group-hover:scale-105 shrink-0 transition-transform">
+                  <div className="w-11 h-11 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center text-[rgb(var(--accent))] group-hover:scale-105 shrink-0 transition-transform">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="space-y-0.5 overflow-hidden">
                     <div className="text-xs font-mono text-slate-500 uppercase tracking-wider font-semibold">Email Address</div>
-                    <div className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#6366f1] transition-colors truncate">
+                    <div className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[rgb(var(--accent))] transition-colors truncate">
                       {personalInfo.contact.email}
                     </div>
-                    <div className="text-xs text-[#6366f1] font-semibold flex items-center gap-1">
+                    <div className="text-xs text-[rgb(var(--accent))] font-semibold flex items-center gap-1">
                       <span>Click to send email</span>
                       <ExternalLink className="w-3 h-3" />
                     </div>
@@ -138,15 +138,15 @@ export default function Contact({ prefilledService }) {
                   href={`tel:${personalInfo.contact.phone.replace(/\s+/g, '')}`}
                   className="group flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-emerald-400 hover:bg-emerald-50/40 transition-all"
                 >
-                  <div className="w-11 h-11 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#10b981] group-hover:scale-105 shrink-0 transition-transform">
+                  <div className="w-11 h-11 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[rgb(var(--accent-tertiary))] group-hover:scale-105 shrink-0 transition-transform">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div className="space-y-0.5">
                     <div className="text-xs font-mono text-slate-500 uppercase tracking-wider font-semibold">Phone Number</div>
-                    <div className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#10b981] transition-colors">
+                    <div className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[rgb(var(--accent-tertiary))] transition-colors">
                       {personalInfo.contact.phone}
                     </div>
-                    <div className="text-xs text-[#10b981] font-semibold flex items-center gap-1">
+                    <div className="text-xs text-[rgb(var(--accent-tertiary))] font-semibold flex items-center gap-1">
                       <span>Click to place call</span>
                       <ExternalLink className="w-3 h-3" />
                     </div>
@@ -160,15 +160,15 @@ export default function Contact({ prefilledService }) {
                   rel="noopener noreferrer"
                   className="group flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-amber-400 hover:bg-amber-50/40 transition-all"
                 >
-                  <div className="w-11 h-11 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-[#f59e0b] group-hover:scale-105 shrink-0 transition-transform">
+                  <div className="w-11 h-11 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-[rgb(var(--accent-secondary))] group-hover:scale-105 shrink-0 transition-transform">
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div className="space-y-0.5">
                     <div className="text-xs font-mono text-slate-500 uppercase tracking-wider font-semibold">Instant Chat</div>
-                    <div className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#f59e0b] transition-colors">
+                    <div className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[rgb(var(--accent-secondary))] transition-colors">
                       WhatsApp Quick Chat
                     </div>
-                    <div className="text-xs text-[#f59e0b] font-semibold flex items-center gap-1">
+                    <div className="text-xs text-[rgb(var(--accent-secondary))] font-semibold flex items-center gap-1">
                       <span>Available for project messaging</span>
                       <ExternalLink className="w-3 h-3" />
                     </div>
@@ -216,8 +216,8 @@ export default function Contact({ prefilledService }) {
                       if (errors.name) setErrors({ ...errors, name: null });
                     }}
                     placeholder="e.g. Alex Morgan"
-                    className={`w-full px-4 py-3 rounded-xl bg-slate-50 border text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#6366f1] transition-colors text-sm ${
-                      errors.name ? 'border-rose-400' : 'border-slate-200 focus:border-[#6366f1]'
+                    className={`w-full px-4 py-3 rounded-xl bg-slate-50 border text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--accent))] transition-colors text-sm ${
+                      errors.name ? 'border-rose-400' : 'border-slate-200 focus:border-[rgb(var(--accent))]'
                     }`}
                   />
                   {errors.name && (
@@ -242,8 +242,8 @@ export default function Contact({ prefilledService }) {
                       if (errors.email) setErrors({ ...errors, email: null });
                     }}
                     placeholder="e.g. alex@company.com"
-                    className={`w-full px-4 py-3 rounded-xl bg-slate-50 border text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#6366f1] transition-colors text-sm ${
-                      errors.email ? 'border-rose-400' : 'border-slate-200 focus:border-[#6366f1]'
+                    className={`w-full px-4 py-3 rounded-xl bg-slate-50 border text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--accent))] transition-colors text-sm ${
+                      errors.email ? 'border-rose-400' : 'border-slate-200 focus:border-[rgb(var(--accent))]'
                     }`}
                   />
                   {errors.email && (
@@ -263,7 +263,7 @@ export default function Contact({ prefilledService }) {
                     id="projectType"
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#6366f1] transition-colors text-sm font-medium"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--accent))] transition-colors text-sm font-medium"
                   >
                     {servicesList.map((s) => (
                       <option key={s.id} value={s.title}>
@@ -293,8 +293,8 @@ export default function Contact({ prefilledService }) {
                       if (errors.details) setErrors({ ...errors, details: null });
                     }}
                     placeholder="Briefly describe what you are looking to build, any timeline goals, or key features you require..."
-                    className={`w-full px-4 py-3 rounded-xl bg-slate-50 border text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#6366f1] transition-colors text-sm resize-none ${
-                      errors.details ? 'border-rose-400' : 'border-slate-200 focus:border-[#6366f1]'
+                    className={`w-full px-4 py-3 rounded-xl bg-slate-50 border text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--accent))] transition-colors text-sm resize-none ${
+                      errors.details ? 'border-rose-400' : 'border-slate-200 focus:border-[rgb(var(--accent))]'
                     }`}
                   />
                   {errors.details && (
@@ -309,7 +309,7 @@ export default function Contact({ prefilledService }) {
                 <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-950 hover:bg-[#6366f1] text-white font-bold text-sm shadow-md shadow-slate-950/20 transition-all duration-200 cursor-pointer"
+                    className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-950 hover:bg-[rgb(var(--accent))] text-white font-bold text-sm shadow-md shadow-slate-950/20 transition-all duration-200 cursor-pointer"
                   >
                     <Send className="w-4 h-4 text-amber-400" />
                     <span>Send Message via Email</span>
@@ -343,7 +343,7 @@ export default function Contact({ prefilledService }) {
 
               {copiedNotification && (
                 <div className="mt-3 p-3 rounded-lg bg-indigo-50 border border-indigo-200 text-indigo-900 text-xs font-semibold flex items-center gap-2">
-                  <Sparkles className="w-3.5 h-3.5 text-[#6366f1]" />
+                  <Sparkles className="w-3.5 h-3.5 text-[rgb(var(--accent))]" />
                   <span>Message details copied to clipboard. You can paste it into any email or chat app!</span>
                 </div>
               )}
