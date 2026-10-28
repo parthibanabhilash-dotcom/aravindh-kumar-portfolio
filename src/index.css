@@ -143,3 +143,10 @@ input, select, textarea { max-width: 100%; }
     main a.inline-flex:hover svg { transform: translateX(2px); }
   }
 }
+
+/* Reserve space for the longest role so typing does not shift the layout. */
+.role-pill { width: 28ch; max-width: 100%; }
+@keyframes role-caret { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .role-cursor { animation: role-caret 1s steps(1) infinite; }
+}

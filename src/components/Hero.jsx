@@ -1,4 +1,5 @@
 import React from 'react';
+import RotatingRole from './RotatingRole';
 import {
   ArrowRight,
   Sparkles,
@@ -42,10 +43,7 @@ export default function Hero() {
             {/* Rotating Role Pill */}
             <div className="flex flex-wrap items-center gap-2.5 text-base sm:text-lg font-medium text-slate-700">
               <span className="text-slate-500">Specializing as:</span>
-              <div className="inline-flex items-center px-3.5 py-1 rounded-lg bg-slate-950 text-[rgb(var(--accent-secondary))] font-mono text-sm sm:text-base font-bold min-h-[38px] shadow-sm">
-                <span>{personalInfo.roles[0]}</span>
-                <span className="inline-block w-[2px] h-5 ml-1 bg-[rgb(var(--accent))] "></span>
-              </div>
+              <RotatingRole />
             </div>
 
             {/* Hero Description */}
