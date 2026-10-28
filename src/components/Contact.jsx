@@ -13,6 +13,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { personalInfo, servicesList } from '../data/portfolioData';
+import { sendContactEmail } from '../lib/sendContactEmail';
 
 export default function Contact({ prefilledService }) {
   const [formData, setFormData] = useState({
@@ -62,23 +63,7 @@ export default function Contact({ prefilledService }) {
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 20000);
     try {
-      const response = await fetch('https://formsubmit.co/ajax/' + personalInfo.contact.email, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        signal: controller.signal,
-        body: JSON.stringify({
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          project: formData.projectType,
-          message: formData.details.trim(),
-          _subject: 'Portfolio inquiry: ' + formData.projectType,
-          _template: 'table',
-        }),
-      });
-      const result = await response.json();
-      if (!response.ok || (result.success !== true && result.success !== 'true')) {
-        throw new Error('Submission rejected');
-      }
+      await sendContactEmail(formData, controller.signal);
       setSubmissionStatus('submitted');
     } catch {
       setSubmissionStatus('error');
