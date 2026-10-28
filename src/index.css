@@ -93,4 +93,22 @@ body {
 }
 
 /* Keep headings below the fixed navigation. */
-section[id] { scroll-margin-top: 9rem; }
+section[id] { scroll-margin-top: 5.5rem; }
+
+/* Skip rendering below-fold sections until they approach the viewport. */
+main > section[id] {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+.grid > *, .flex > * { min-width: 0; }
+input, select, textarea { max-width: 100%; }
+@media (max-width: 639px) {
+  input, select, textarea { font-size: 16px; }
+  footer { padding-bottom: 6rem; }
+}
+@media (min-width: 1024px) {
+  section[id] { scroll-margin-top: 9rem; }
+}
+@media (hover: none) {
+  .group:hover { transform: none; }
+}

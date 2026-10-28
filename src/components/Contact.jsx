@@ -76,10 +76,8 @@ export default function Contact({ prefilledService }) {
   };
 
   return (
-    <section id="contact" className="py-24 relative bg-slate-50/75 border-y border-slate-200/80">
+    <section id="contact" className="py-16 sm:py-24 relative bg-slate-50/75 border-y border-slate-200/80">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-indigo-500/5 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-amber-500/5 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
@@ -116,7 +114,7 @@ export default function Contact({ prefilledService }) {
                 {/* Email Item */}
                 <a
                   href={`mailto:${personalInfo.contact.email}`}
-                  className="group flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-400 hover:bg-indigo-50/40 transition-all"
+                  className="group flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-400 hover:bg-indigo-50/40 transition-colors"
                 >
                   <div className="w-11 h-11 rounded-lg bg-indigo-50 border border-indigo-200 flex items-center justify-center text-[rgb(var(--accent))] group-hover:scale-105 shrink-0 transition-transform">
                     <Mail className="w-5 h-5" />
@@ -136,7 +134,7 @@ export default function Contact({ prefilledService }) {
                 {/* Phone Item */}
                 <a
                   href={`tel:${personalInfo.contact.phone.replace(/\s+/g, '')}`}
-                  className="group flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-emerald-400 hover:bg-emerald-50/40 transition-all"
+                  className="group flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-emerald-400 hover:bg-emerald-50/40 transition-colors"
                 >
                   <div className="w-11 h-11 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[rgb(var(--accent-tertiary))] group-hover:scale-105 shrink-0 transition-transform">
                     <Phone className="w-5 h-5" />
@@ -158,7 +156,7 @@ export default function Contact({ prefilledService }) {
                   href={`https://wa.me/916383976429?text=${encodeURIComponent("Hi Aravindh, I came across your portfolio and would like to discuss a project!")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-amber-400 hover:bg-amber-50/40 transition-all"
+                  className="group flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-amber-400 hover:bg-amber-50/40 transition-colors"
                 >
                   <div className="w-11 h-11 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-[rgb(var(--accent-secondary))] group-hover:scale-105 shrink-0 transition-transform">
                     <MessageSquare className="w-5 h-5" />
@@ -309,7 +307,7 @@ export default function Contact({ prefilledService }) {
                 <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-950 hover:bg-[rgb(var(--accent))] text-white font-bold text-sm shadow-md shadow-slate-950/20 transition-all duration-200 cursor-pointer"
+                    className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-950 hover:bg-[rgb(var(--accent))] text-white font-bold text-sm shadow-md shadow-slate-950/20 transition-colors duration-200 cursor-pointer"
                   >
                     <Send className="w-4 h-4 text-amber-400" />
                     <span>Send Message via Email</span>

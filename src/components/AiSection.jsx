@@ -16,9 +16,8 @@ export default function AiSection() {
   };
 
   return (
-    <section id="ai-workflow" className="py-24 relative bg-white overflow-hidden bg-grid-pattern-light">
+    <section id="ai-workflow" className="py-16 sm:py-24 relative bg-white overflow-hidden bg-grid-pattern-light">
       {/* Background radial highlights */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-blue-500/5 via-orange-500/5 to-blue-500/5 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
@@ -38,20 +37,20 @@ export default function AiSection() {
         </div>
 
         {/* 3 Core AI Tools Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mb-16">
           {aiWorkflowDetails.tools.map((tool, idx) => {
             const IconComp = toolIcons[tool.icon] || Cpu;
             const isOrange = idx === 1;
             return (
               <div
                 key={tool.name}
-                className="group relative rounded-2xl bg-white border border-slate-200 p-7 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300 flex flex-col justify-between"
+                className="group relative rounded-2xl bg-white border border-slate-200 p-7 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-500/10 transition-colors duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Tool Header */}
-                  <div className="flex items-center justify-between mb-5">
+                  <div className="flex flex-wrap gap-3 items-center justify-between mb-5">
                     <div
-                      className={`w-12 h-12 rounded-xl border flex items-center justify-center transition-all ${
+                      className={`w-12 h-12 rounded-xl border flex items-center justify-center transition-colors ${
                         isOrange
                           ? 'bg-orange-50 text-orange-600 border-orange-200 group-hover:bg-orange-500 group-hover:text-white'
                           : 'bg-blue-50 text-blue-600 border-blue-200 group-hover:bg-blue-600 group-hover:text-white'

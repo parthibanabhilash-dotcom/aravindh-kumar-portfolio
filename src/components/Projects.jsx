@@ -227,10 +227,8 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-24 relative bg-slate-50/75 border-y border-slate-200/80">
+    <section id="projects" className="py-16 sm:py-24 relative bg-slate-50/75 border-y border-slate-200/80">
       {/* Background Glows */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/5 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-orange-500/5 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
@@ -255,7 +253,7 @@ export default function Projects() {
             <button
               key={cat}
               onClick={() => setFilter(cat === 'all' ? 'all' : cat)}
-              className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+              className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
                 filter.toLowerCase() === cat.toLowerCase()
                   ? 'bg-slate-950 text-white shadow-md shadow-slate-950/20'
                   : 'bg-white text-slate-700 hover:text-slate-950 hover:bg-slate-100 border border-slate-200'
@@ -273,16 +271,16 @@ export default function Projects() {
             return (
               <div
                 key={project.id}
-                className="group rounded-2xl bg-white border border-slate-200 hover:border-orange-500/50 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300 flex flex-col justify-between"
+                className="group rounded-2xl bg-white border border-slate-200 hover:border-orange-500/50 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-colors duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Browser-style Window Header Bar */}
-                  <div className="flex items-center justify-between px-4 py-2.5 bg-slate-100/90 border-b border-slate-200">
+                  <div className="flex flex-wrap gap-2 items-center justify-between px-4 py-2.5 bg-slate-100/90 border-b border-slate-200">
                     <div className="flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full bg-rose-400" />
                       <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
                       <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-                      <span className="ml-2 text-[11px] font-mono text-slate-500 truncate max-w-[200px] font-medium">
+                      <span className="ml-2 text-[11px] font-mono text-slate-500 truncate max-w-[140px] sm:max-w-[200px] font-medium">
                         {project.liveUrl.replace('https://', '')}
                       </span>
                     </div>
@@ -337,7 +335,7 @@ export default function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-slate-950 hover:bg-orange-600 text-white font-semibold text-sm transition-all duration-200 shadow-md shadow-slate-950/15 hover:shadow-orange-500/25"
+                    className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-slate-950 hover:bg-orange-600 text-white font-semibold text-sm transition-colors duration-200 shadow-md shadow-slate-950/15 hover:shadow-orange-500/25"
                   >
                     <span>View Live Project</span>
                     <ExternalLink className="w-4 h-4 text-orange-300 group-hover:text-white" />

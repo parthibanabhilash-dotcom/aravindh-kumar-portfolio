@@ -35,10 +35,8 @@ export default function Services({ onSelectService }) {
   ];
 
   return (
-    <section id="services" className="py-24 relative bg-slate-50/75 border-y border-slate-200/80">
+    <section id="services" className="py-16 sm:py-24 relative bg-slate-50/75 border-y border-slate-200/80">
       {/* Background Glow */}
-      <div className="absolute top-1/3 left-10 w-80 h-80 bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
@@ -64,12 +62,12 @@ export default function Services({ onSelectService }) {
             return (
               <div
                 key={service.id}
-                className="group relative rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 hover:border-slate-400 hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-300 flex flex-col justify-between"
+                className="group relative rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 hover:border-slate-400 hover:shadow-xl hover:shadow-slate-900/5 transition-colors duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Service Icon */}
                   <div
-                    className={`w-12 h-12 rounded-xl border flex items-center justify-center transition-all duration-200 mb-5 ${style.bg} ${style.text} ${style.border} ${style.hoverBg} ${style.hoverText}`}
+                    className={`w-12 h-12 rounded-xl border flex items-center justify-center transition-colors duration-200 mb-5 ${style.bg} ${style.text} ${style.border} ${style.hoverBg} ${style.hoverText}`}
                   >
                     <IconComp className="w-6 h-6" />
                   </div>
@@ -100,7 +98,7 @@ export default function Services({ onSelectService }) {
                   <a
                     href="#contact"
                     onClick={() => onSelectService && onSelectService(service.title)}
-                    className={`inline-flex items-center gap-2 text-sm font-bold ${style.link} hover:opacity-80 group-hover:translate-x-1 transition-all`}
+                    className={`inline-flex items-center gap-2 text-sm font-bold ${style.link} hover:opacity-80 group-hover:translate-x-1 transition-colors`}
                   >
                     <span>Discuss Your Project</span>
                     <ArrowRight className="w-4 h-4" />

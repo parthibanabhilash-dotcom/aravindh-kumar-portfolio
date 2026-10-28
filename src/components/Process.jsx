@@ -18,9 +18,8 @@ export default function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 relative bg-white overflow-hidden bg-grid-pattern-light">
+    <section id="process" className="py-16 sm:py-24 relative bg-white overflow-hidden bg-grid-pattern-light">
       {/* Ambient background blur */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-indigo-500/5 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
@@ -51,7 +50,7 @@ export default function Process() {
               return (
                 <div
                   key={step.step}
-                  className="group relative bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 hover:border-slate-400 hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-300 flex flex-col justify-between"
+                  className="group relative bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 hover:border-slate-400 hover:shadow-xl hover:shadow-slate-900/5 transition-colors duration-300 flex flex-col justify-between"
                 >
                   <div>
                     {/* Top Step Number Badge & Icon */}

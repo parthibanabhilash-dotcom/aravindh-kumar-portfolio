@@ -11,12 +11,12 @@ export default function PalettePill({ activeAccent, onSelectAccent }) {
   ];
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2">
-      <div className="bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xl shadow-slate-900/10 px-3.5 py-2 rounded-full flex items-center gap-2.5 transition-transform hover:scale-105">
+    <div className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2">
+      <div className="bg-white/95  border border-slate-200/90 shadow-xl shadow-slate-900/10 px-2 sm:px-3.5 py-1.5 rounded-full flex items-center gap-2.5 transition-transform hover:scale-105">
         <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-wider pr-1">
           Palette:
         </span>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-0.5">
           {colors.map((c) => {
             const isActive = activeAccent === c.id;
             return (
@@ -27,7 +27,7 @@ export default function PalettePill({ activeAccent, onSelectAccent }) {
                 aria-pressed={isActive}
                 onClick={() => onSelectAccent && onSelectAccent(c.id)}
                 title={`${c.name} (${c.hex})`}
-                className={`relative w-5 h-5 rounded-full transition-all duration-200 transform hover:scale-125 cursor-pointer ${
+                className={`relative w-9 h-9 sm:w-8 sm:h-8 rounded-full border-[7px] border-white transition-colors duration-200 transform hover:scale-125 cursor-pointer ${
                   isActive ? 'ring-2 ring-offset-2 ring-slate-900 scale-110' : ''
                 }`}
                 style={{ backgroundColor: c.hex }}

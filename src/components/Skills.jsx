@@ -30,9 +30,8 @@ export default function Skills() {
       : skillCategories.filter((cat) => cat.id === activeTab);
 
   return (
-    <section id="skills" className="py-24 relative bg-white bg-dot-pattern-light">
+    <section id="skills" className="py-16 sm:py-24 relative bg-white bg-dot-pattern-light">
       {/* Background ambient blurs */}
-      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-orange-500/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
@@ -55,7 +54,7 @@ export default function Skills() {
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           <button
             onClick={() => setActiveTab('all')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-colors duration-200 cursor-pointer ${
               activeTab === 'all'
                 ? 'bg-slate-950 text-white shadow-md shadow-slate-950/20'
                 : 'bg-slate-100 text-slate-700 hover:text-slate-950 hover:bg-slate-200 border border-slate-200/80'
@@ -67,7 +66,7 @@ export default function Skills() {
             <button
               key={cat.id}
               onClick={() => setActiveTab(cat.id)}
-              className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${
+              className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-colors duration-200 cursor-pointer ${
                 activeTab === cat.id
                   ? 'bg-slate-950 text-white shadow-md shadow-slate-950/20'
                   : 'bg-slate-100 text-slate-700 hover:text-slate-950 hover:bg-slate-200 border border-slate-200/80'
@@ -86,13 +85,13 @@ export default function Skills() {
             return (
               <div
                 key={category.id}
-                className="group relative rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300 flex flex-col justify-between"
+                className="group relative rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-500/10 transition-colors duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Category Title & Icon */}
                   <div className="flex items-center gap-3.5 mb-3">
                     <div
-                      className={`w-12 h-12 rounded-xl border flex items-center justify-center transition-all ${
+                      className={`w-12 h-12 shrink-0 rounded-xl border flex items-center justify-center transition-colors ${
                         isOrange
                           ? 'bg-orange-50 text-orange-600 border-orange-200 group-hover:bg-orange-500 group-hover:text-white'
                           : 'bg-blue-50 text-blue-600 border-blue-200 group-hover:bg-blue-600 group-hover:text-white'
@@ -119,7 +118,7 @@ export default function Skills() {
                     {category.skills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 hover:border-slate-200 hover:bg-slate-100/80 transition-all"
+                        className="flex flex-wrap items-center justify-between gap-2 p-2.5 rounded-lg bg-slate-50 border border-slate-100 hover:border-slate-200 hover:bg-slate-100/80 transition-colors"
                       >
                         <div className="flex items-center gap-2.5">
                           <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" />

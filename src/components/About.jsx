@@ -10,10 +10,8 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-24 relative bg-slate-50/75 border-y border-slate-200/80">
+    <section id="about" className="py-16 sm:py-24 relative bg-slate-50/75 border-y border-slate-200/80">
       {/* Background ambient accents */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-80 h-80 bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
@@ -60,7 +58,7 @@ export default function About() {
             <a
               href="/Aravindh_Kumar_Resume.pdf"
               download="Aravindh_Kumar_Resume.pdf"
-              className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-950 text-white hover:bg-[rgb(var(--accent))] text-xs font-bold transition-all shadow-sm group"
+              className="shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-950 text-white hover:bg-[rgb(var(--accent))] text-xs font-bold transition-colors shadow-sm group"
             >
               <FileDown className="w-4 h-4 text-[rgb(var(--accent-secondary))] group-hover:text-white transition-colors" />
               <span>Download Resume (PDF)</span>
@@ -76,12 +74,12 @@ export default function About() {
             return (
               <div
                 key={highlight.id}
-                className="group relative p-8 rounded-2xl bg-white border border-slate-200 hover:border-slate-400 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5 flex flex-col justify-between"
+                className="group relative p-8 rounded-2xl bg-white border border-slate-200 hover:border-slate-400 transition-colors duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5 flex flex-col justify-between"
               >
                 <div>
                   {/* Icon */}
                   <div
-                    className={`w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-200 mb-6 ${
+                    className={`w-14 h-14 rounded-xl flex items-center justify-center transition-colors duration-200 mb-6 ${
                       isAmber
                         ? 'bg-amber-50 text-[rgb(var(--accent-secondary))] border border-amber-200 group-hover:bg-[rgb(var(--accent-secondary))] group-hover:text-white'
                         : 'bg-indigo-50 text-[rgb(var(--accent))] border border-indigo-200 group-hover:bg-[rgb(var(--accent))] group-hover:text-white'
