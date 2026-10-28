@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useEntranceMotion from './hooks/useEntranceMotion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -20,6 +21,7 @@ const accents = {
 };
 
 export default function App() {
+  useEntranceMotion();
   const [selectedService, setSelectedService] = useState('');
   const [activeAccent, setActiveAccent] = useState(() => {
     try {
