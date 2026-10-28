@@ -11,7 +11,7 @@ A complete, modern, premium, responsive personal portfolio website for **Aravind
 - **Theme:** Sophisticated dark mode with electric blue, violet, and cyan accents.
 - **Monogram:** Custom AK vector logo.
 - **Direct Contact:** 
-  - Email: [aravindpro@gmail.com](mailto:aravindpro@gmail.com)
+  - Email: [aravindpro2005@gmail.com](mailto:aravindpro2005@gmail.com)
   - Phone: [+91 6383976429](tel:+916383976429)
 
 ---

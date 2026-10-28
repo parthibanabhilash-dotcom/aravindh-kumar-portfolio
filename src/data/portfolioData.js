@@ -13,7 +13,7 @@ export const personalInfo = {
     "Video Editor",
   ],
   contact: {
-    email: "aravindpro@gmail.com",
+    email: "aravindpro2005@gmail.com",
     phone: "+91 6383976429",
     location: "Tamil Nadu, India",
     status: "Available for Projects & Full-time Roles",

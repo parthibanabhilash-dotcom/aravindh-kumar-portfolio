@@ -46,7 +46,7 @@ doc
   .fillColor(COLOR_SLATE)
   .font('Helvetica')
   .fontSize(8.5)
-  .text('Email: aravindpro@gmail.com   •   Phone: +91 6383976429   •   Location: Tamil Nadu, India', 60, 93);
+  .text('Email: aravindpro2005@gmail.com   •   Phone: +91 6383976429   •   Location: Tamil Nadu, India', 60, 93);
 
 // Section Helper
 let currentY = 130;
@@ -79,7 +79,7 @@ doc
     { width: 505 }
   );
 
-currentY += 46;
+currentY = doc.y + 10;
 
 // 2. Technical & Creative Skills
 drawSectionHeading('Technical & Creative Toolkit');
@@ -176,7 +176,7 @@ projects.forEach((p) => {
     .fontSize(8.5)
     .text(p.desc, 45, currentY, { width: 505 });
 
-  currentY += 21;
+  currentY = doc.y + 10;
 });
 
 currentY += 2;
